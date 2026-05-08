@@ -1,10 +1,33 @@
-# React Native with Expo template
+# Pogoda tu i teraz
 
-By default Expo web is automatically running but you can use the QR code in the application log to open Expo on your iOS or Android device. 
+## Cel aplikacji
 
-Add your [configuration](https://codesandbox.io/docs/projects/learn/setting-up/tasks) to optimize it for [CodeSandbox](https://codesandbox.io/p/dashboard).
+Celem aplikacji jest pobranie aktualnej lokalizacji użytkownika i wyświetlenie pogody dla tego miejsca.
 
-## Resources
+## Dane z urządzenia
 
-- [CodeSandbox — Docs](https://codesandbox.io/docs/learn)
-- [CodeSandbox — Discord](https://discord.gg/Ggarp3pX5H)
+Aplikacja wykorzystuje lokalizację GPS telefonu.
+
+## Wykorzystane biblioteki i API
+
+- React Native
+- Expo
+- expo-location
+- Open-Meteo Forecast API
+
+## Przepływ danych
+
+Po uruchomieniu aplikacja prosi o zgodę na dostęp do lokalizacji. Następnie pobiera współrzędne GPS i wysyła je do API Open-Meteo. API zwraca dane pogodowe w formacie JSON. Aplikacja przetwarza te dane i wyświetla aktualną temperaturę, prędkość wiatru, opady oraz prognozę godzinową na 24 godziny.
+
+## Obsługa błędów
+
+Aplikacja pokazuje błąd, gdy użytkownik nie wyrazi zgody na lokalizację, gdy wystąpi problem z połączeniem internetowym albo gdy API nie zwróci poprawnych danych.
+
+## Funkcje aplikacji
+
+- pobieranie lokalizacji GPS,
+- pobieranie aktualnej pogody,
+- wyświetlanie temperatury, wiatru i opadów,
+- wyświetlanie prognozy na 24 godziny,
+- ręczne odświeżanie danych,
+- obsługa błędów i stanu ładowania.
